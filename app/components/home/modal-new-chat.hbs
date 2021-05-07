@@ -1,0 +1,20 @@
+<div {{did-update this.onOpenChange @open}} class="modal fade" id="modalNewChat" tabindex="-1"
+    aria-labelledby="modalChatNomeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" data-bs-backdrop="static">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalChatNomeLabel">Digite o nome do chat</h5>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <Input @type="text" class="form-control" id="inputChatName" placeholder="Digite o nome do chat..."
+                        @value={{this.chatName}}>
+                    </Input>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick={{perform this.onChatSave}}>Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>

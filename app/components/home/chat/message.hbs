@@ -1,0 +1,7 @@
+{{#if (eq this.messageType "system")}}
+<Home::Chat::Message::SystemMessage @message={{@message}} />
+{{else if (eq this.messageType "sender")}}
+<Home::Chat::Message::SendMessage @message={{@message}} />
+{{else}}
+<Home::Chat::Message::ReciveMessage @message={{@message}} />
+{{/if}}

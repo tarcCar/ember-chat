@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title">{{@title}}</h5>
+            {{#if @onNewChatClick}}
+            <button type="button" class="btn btn-primary align-self-center mb-1 mt-0"
+                onclick={{@onNewChatClick}}>Novo</button>
+            {{/if}}
+        </div>
+        <ol class="list-group list-group">
+            {{#if @chats.length}}
+            {{#each @chats as |chat|}}
+            <button type="button" class="list-group-item d-flex justify-content-between align-items-start" onClick={{fn
+                @onChatSelected chat}}>
+                <div class="ms-2 me-auto">
+                    {{chat.nome}}
+                </div>
+            </button>
+            {{/each}}
+            {{else}}
+            <li class="list-group-item text-center fst-italic">
+                Nenhum registro encontrado
+            </li>
+            {{/if}}
+        </ol>
+    </div>
+</div>

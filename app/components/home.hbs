@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-light mb-5">
+    <div class="container-fluid">
+        <p class="navbar-brand" href="#">Ember Chat</p>
+    </div>
+</nav>
+<div {{did-insert this.didInit}} class="container">
+    <Home::ModalSelectUser @open={{this.open}} @onClose={{this.modelUserNameClose}} />
+    <Home::ModalNewChat @open={{this.newChatOpen}} @onClose={{this.modelChatClose}} />
+    <div class="row">
+        <div class="col-3">
+            <Home::ChatList @title="Suas Conversas" @chats={{this.userChats}} @onChatSelected={{perform
+                this.onNewChatSelected}} />
+        </div>
+        <div class="col-6">
+            {{#if this.chat}}
+            <Home::Chat @chat={{this.chat}} />
+            {{/if}}
+        </div>
+        <div class="col-3">
+            <Home::ChatList @title="Conversas" @onNewChatClick={{this.onNewChatClick}} @chats={{this.userChatsNotIn}}
+                @onChatSelected={{perform this.onNewChatSelected}} />
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+.chat-message-list {
+  max-height: 450px;
+  height: 100%;
+  overflow-y: auto;
+}
