@@ -29,6 +29,8 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.API_URL = 'http://localhost:1337/';
+    ENV.APP.SOCKET_URL = 'http://localhost:1337';
   }
 
   if (environment === 'test') {
@@ -45,6 +47,8 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.APP.API_URL = 'https://chat-pdi.herokuapp.com/';
+    ENV.APP.SOCKET_URL = 'https://chat-pdi.herokuapp.com';
   }
 
   return ENV;
